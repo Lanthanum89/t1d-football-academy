@@ -13,34 +13,41 @@ function App() {
   return (
     <div className="app-shell">
       <header className="hero">
-        <div className="hero__pitch-lines" aria-hidden="true" />
         <nav className="topbar" aria-label="Academy header">
           <a className="brand" href="#top" aria-label="T1D Football Academy home">
-            <span className="brand__ball" aria-hidden="true">⚽</span>
-            <span>T1D Football Academy</span>
+            <span className="brand__roundel" aria-hidden="true">T1D</span>
+            <span>Football Academy</span>
           </a>
-          <span className="team-chip">You are on the team</span>
+          <span className="team-chip">Matchday special</span>
         </nav>
 
         <div className="hero__content" id="top">
-          <p className="eyebrow">⭐ Warm-up time!</p>
-          <h1>Kick off with<br />Team T1D!</h1>
-          <p>
-            Fun football games about noticing how you feel, shouting for your grown-up team and being a champion.
-          </p>
-          <a className="hero__button" href="#training">Let's play! ⚽</a>
+          <div className="hero__copy">
+            <p className="cover-line">The big game starts here!</p>
+            <h1><span>Team T1D</span> needs you</h1>
+            <p className="hero__intro">Play quick football challenges with your academy team.</p>
+            <a className="hero__button" href="#training">Play now</a>
+          </div>
+          <div className="hero__players" aria-hidden="true">
+            <img className="hero__player" src="./mascots/player-running.jpg" alt="" />
+            <img className="hero__lion" src="./mascots/lion-running.jpg" alt="" />
+            <span className="cover-burst">NEW<br />GAMES</span>
+          </div>
+        </div>
+        <div className="hero__ticker" aria-hidden="true">
+          <span>BIG CHALLENGES</span><span>TEAMWORK</span><span>FOOTBALL FUN</span>
         </div>
       </header>
 
       <main className="academy" id="training">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">🏆 Game time</p>
-            <h2>Pick your game!</h2>
+            <p className="section-kicker">Inside this issue</p>
+            <h2>Choose your challenge</h2>
           </div>
           <div className="progress-badge" aria-label="One activity ready">
             <strong>1</strong>
-            <span>game ready</span>
+            <span>live game</span>
           </div>
         </div>
 
@@ -51,8 +58,8 @@ function App() {
         </div>
 
         <aside className="grown-up-note">
-          <span className="grown-up-note__icon" aria-hidden="true">🛡️</span>
           <div>
+            <p className="grown-up-note__label">Touchline notes</p>
             <h2>For grown-ups</h2>
             <p>
               This app supports conversation and confidence. It never interprets glucose readings,
@@ -63,11 +70,10 @@ function App() {
       </main>
 
       <footer>
-        <p>⚽ Go team! Built for confident conversations, not clinical decisions.</p>
+        <p>Built for confident conversations, not clinical decisions.</p>
       </footer>
     </div>
   )
 }
 
 export default App
-
