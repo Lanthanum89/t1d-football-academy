@@ -1,6 +1,6 @@
 # T1D Football Academy
 
-A private, installable football-themed learning app for young children living with type 1 diabetes.
+An installable football-themed learning app for young children living with type 1 diabetes.
 
 The academy uses short activities to build confidence around noticing body signals, speaking to trusted adults and understanding that diabetes care is a team effort. It is intentionally **not** a glucose tracker, insulin calculator or medical decision tool.
 
@@ -54,4 +54,4 @@ React owns the installable app shell, menus and accessible text-heavy UI. Future
 
 ## Privacy
 
-This repository is private. Do not commit a child's full name, medical identifiers, glucose data, photographs, school information or individual treatment quantities.
+Do not commit a child's full name, medical identifiers, glucose data, photographs, school information or individual treatment quantities.
