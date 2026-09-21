@@ -23,24 +23,24 @@ function App() {
         </nav>
 
         <div className="hero__content" id="top">
-          <p className="eyebrow">Welcome to training</p>
-          <h1>Learn about T1D.<br />Play like a champion.</h1>
+          <p className="eyebrow">⭐ Warm-up time!</p>
+          <h1>Kick off with<br />Team T1D!</h1>
           <p>
-            Short football activities about noticing, speaking up and working with your trusted grown-ups.
+            Fun football games about noticing how you feel, shouting for your grown-up team and being a champion.
           </p>
-          <a className="hero__button" href="#training">Choose a training drill ↓</a>
+          <a className="hero__button" href="#training">Let's play! ⚽</a>
         </div>
       </header>
 
       <main className="academy" id="training">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">Academy activities</p>
-            <h2>Pick your next drill</h2>
+            <p className="eyebrow">🏆 Game time</p>
+            <h2>Pick your game!</h2>
           </div>
           <div className="progress-badge" aria-label="One activity ready">
             <strong>1</strong>
-            <span>drill ready</span>
+            <span>game ready</span>
           </div>
         </div>
 
@@ -63,7 +63,7 @@ function App() {
       </main>
 
       <footer>
-        <p>Built for confident conversations, not clinical decisions.</p>
+        <p>⚽ Go team! Built for confident conversations, not clinical decisions.</p>
       </footer>
     </div>
   )

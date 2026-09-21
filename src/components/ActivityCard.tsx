@@ -27,7 +27,7 @@ export function ActivityCard({ activity, onStart }: ActivityCardProps) {
           disabled={!isReady}
           onClick={() => onStart(activity.id)}
         >
-          {isReady ? 'Start training' : 'Training soon'}
+          {isReady ? 'Play now! ⚽' : 'Coming soon!'}
         </button>
       </div>
     </article>
