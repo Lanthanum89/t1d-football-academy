@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Football with a blue medical cross">
+  <rect width="512" height="512" rx="112" fill="#f4f0dd"/>
+  <circle cx="256" cy="256" r="184" fill="#fff" stroke="#12372a" stroke-width="28"/>
+  <path d="M256 146l66 48-25 78h-82l-25-78z" fill="#12372a"/>
+  <path d="M128 205l62-11 25 78-50 52-57-43M384 205l-62-11-25 78 50 52 57-43M181 391l-16-67 50-52h82l50 52-16 67" fill="none" stroke="#12372a" stroke-width="24" stroke-linejoin="round"/>
+  <circle cx="392" cy="120" r="78" fill="#1677ff" stroke="#fff" stroke-width="16"/>
+  <path d="M376 76h32v28h28v32h-28v28h-32v-28h-28v-32h28z" fill="#fff"/>
+</svg>
+
