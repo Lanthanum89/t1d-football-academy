@@ -9,7 +9,7 @@
   --sky: #1c9dea;
   --sky-dark: #0f6fb0;
   --grass: #2ec95e;
-  --grass-dark: #1c8f40;
+  --grass-dark: #1a7d38;
   --sun: #ffd23f;
   --sun-dark: #d99b00;
   --tangerine: #ff9f1c;
@@ -57,7 +57,13 @@ button:focus-visible, a:focus-visible {
   line-height: 1;
   content: '⚽';
   filter: drop-shadow(0 12px 0 rgba(0,0,0,.12));
-  transform: rotate(-14deg);
+  animation: ball-bob 3.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes ball-bob {
+  0%, 100% { transform: rotate(-14deg) translateY(0); }
+  50% { transform: rotate(-6deg) translateY(-16px); }
 }
 
 .hero__pitch-lines {
@@ -399,5 +405,5 @@ footer p { margin: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
 }
