@@ -3,8 +3,8 @@ import type { Activity } from '../types/activity'
 export const activities: Activity[] = [
   {
     id: 'call-the-coach',
-    title: 'Call the Coach',
-    description: 'Practise telling a trusted grown-up when something feels different.',
+    title: 'Call the Coach!',
+    description: 'Shout for your grown-up teammate the moment something feels wobbly.',
     icon: '📣',
     colour: 'blue',
     status: 'ready',
@@ -12,7 +12,7 @@ export const activities: Activity[] = [
   {
     id: 'pack-the-kit-bag',
     title: 'Pack the Kit Bag',
-    description: 'Learn which familiar T1D items travel with the team.',
+    description: 'Race to spot which gear your team always brings to the pitch.',
     icon: '🎒',
     colour: 'orange',
     status: 'planned',
@@ -20,7 +20,7 @@ export const activities: Activity[] = [
   {
     id: 'half-time-check',
     title: 'Half-Time Check',
-    description: 'See how stopping for a check helps players get back to having fun.',
+    description: 'Blow the whistle for a quick check, then get straight back to the fun.',
     icon: '⏱️',
     colour: 'purple',
     status: 'planned',
@@ -28,7 +28,7 @@ export const activities: Activity[] = [
   {
     id: 'meet-the-team',
     title: 'Meet the Team',
-    description: 'Meet insulin, glucose, food, movement, devices and trusted adults.',
+    description: 'Say hi to insulin, glucose, food, movement and your trusted grown-ups.',
     icon: '⚽',
     colour: 'green',
     status: 'planned',
