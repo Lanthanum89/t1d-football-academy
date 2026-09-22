@@ -60,7 +60,7 @@ export function CallTheCoach({ onExit }: CallTheCoachProps) {
 
       <section className="game-card" aria-labelledby="game-title">
         <div className="game-card__art" aria-hidden="true">
-          <img src={stage === 'feedback' && choice === 'tell' ? './mascots/lion-running.jpg' : './mascots/player-running.jpg'} alt="" />
+          <img src={stage === 'feedback' && choice === 'tell' ? './mascots/lion-running.png' : './mascots/player-running.png'} alt="" />
         </div>
         <div className="game-card__content">
           <p className="game-kicker">Call the Coach!</p>
@@ -80,15 +80,15 @@ export function CallTheCoach({ onExit }: CallTheCoachProps) {
               <h1 id="game-title" ref={stageHeadingRef} tabIndex={-1}>Who do you tell?</h1>
               <div className="choice-grid" aria-label="Choose what to do">
                 <button type="button" onClick={() => choose('tell')}>
-                  <span className="choice-art choice-art--point" aria-hidden="true" style={{ backgroundImage: 'url("./mascots/player-poses.jpg")' }} />
+                  <span className="choice-art choice-art--point" aria-hidden="true" style={{ backgroundImage: 'url("./mascots/player-poses.png")' }} />
                   <strong>My grown-up</strong>
                 </button>
                 <button type="button" onClick={() => choose('play')}>
-                  <span className="choice-art choice-art--run" aria-hidden="true" style={{ backgroundImage: 'url("./mascots/player-poses.jpg")' }} />
+                  <span className="choice-art choice-art--run" aria-hidden="true" style={{ backgroundImage: 'url("./mascots/player-poses.png")' }} />
                   <strong>Keep playing</strong>
                 </button>
                 <button type="button" onClick={() => choose('quiet')}>
-                  <span className="choice-art choice-art--quiet" aria-hidden="true" style={{ backgroundImage: 'url("./mascots/player-poses.jpg")' }} />
+                  <span className="choice-art choice-art--quiet" aria-hidden="true" style={{ backgroundImage: 'url("./mascots/player-poses.png")' }} />
                   <strong>Say nothing</strong>
                 </button>
               </div>

@@ -29,8 +29,8 @@ function App() {
             <a className="hero__button" href="#training">Play now</a>
           </div>
           <div className="hero__players" aria-hidden="true">
-            <img className="hero__player" src="./mascots/player-running.jpg" alt="" />
-            <img className="hero__lion" src="./mascots/lion-running.jpg" alt="" />
+            <img className="hero__player" src="./mascots/player-running.png" alt="" />
+            <img className="hero__lion" src="./mascots/lion-running.png" alt="" />
             <span className="cover-burst">NEW<br />GAMES</span>
           </div>
         </div>
