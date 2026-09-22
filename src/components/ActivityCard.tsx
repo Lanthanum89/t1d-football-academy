@@ -14,7 +14,7 @@ export function ActivityCard({ activity, onStart }: ActivityCardProps) {
         <span className="activity-card__number">0{activity.id === 'call-the-coach' ? 1 : activity.id === 'pack-the-kit-bag' ? 2 : activity.id === 'half-time-check' ? 3 : 4}</span>
         <span
           className="activity-card__player"
-          style={{ backgroundImage: 'url("./mascots/player-poses.jpg")' }}
+          style={{ backgroundImage: 'url("./mascots/player-poses.png")' }}
         />
       </div>
       <div className="activity-card__body">
