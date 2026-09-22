@@ -19,6 +19,7 @@ html { scroll-behavior: smooth; }
 body { min-width: 320px; min-height: 100vh; margin: 0; }
 button, a { font: inherit; }
 button:focus-visible, a:focus-visible { outline: 5px solid white; outline-offset: 4px; box-shadow: 0 0 0 9px var(--ink); }
+[tabindex='-1']:focus { outline: none; }
 
 .app-shell { min-height: 100vh; overflow: hidden; background: var(--paper); }
 .hero { position: relative; min-height: 720px; overflow: hidden; border-bottom: 12px solid var(--ink); color: white; background: radial-gradient(circle at 20% 20%, rgba(255,255,255,.16) 0 2px, transparent 3px) 0 0 / 18px 18px, var(--blue); }
