@@ -21,6 +21,15 @@ const kitItems: KitItem[] = [
   { id: 'toy-car', label: 'Toy car', needed: false },
 ]
 
+const kitItemArt: Record<string, string> = {
+  'glucose-meter': './mascots/kit/glucose-meter.png',
+  'quick-snack': './mascots/kit/quick-snack.png',
+  'insulin-kit': './mascots/kit/insulin-kit.png',
+  'spare-batteries': './mascots/kit/spare-batteries.png',
+  teddy: './mascots/kit/teddy.png',
+  'toy-car': './mascots/kit/toy-car.png',
+}
+
 export function PackTheKitBag({ onExit }: PackTheKitBagProps) {
   const [stage, setStage] = useState<Stage>('intro')
   const [packed, setPacked] = useState<string[]>([])
@@ -101,6 +110,7 @@ export function PackTheKitBag({ onExit }: PackTheKitBagProps) {
                       aria-pressed={isPacked}
                       onClick={() => togglePacked(item.id)}
                     >
+                      <img className="kit-item__art" src={kitItemArt[item.id]} alt="" aria-hidden="true" />
                       <strong>{item.label}</strong>
                       <span>{isPacked ? 'Packed' : 'Tap to pack'}</span>
                     </button>
