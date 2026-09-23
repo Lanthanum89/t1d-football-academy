@@ -2,12 +2,27 @@ import { useState } from 'react'
 import { ActivityCard } from './components/ActivityCard'
 import { activities } from './data/activities'
 import { CallTheCoach } from './games/CallTheCoach'
+import { PackTheKitBag } from './games/PackTheKitBag'
+import { HalfTimeCheck } from './games/HalfTimeCheck'
+import { MeetTheTeam } from './games/MeetTheTeam'
 
 function App() {
   const [activeActivity, setActiveActivity] = useState<string | null>(null)
 
   if (activeActivity === 'call-the-coach') {
     return <CallTheCoach onExit={() => setActiveActivity(null)} />
+  }
+
+  if (activeActivity === 'pack-the-kit-bag') {
+    return <PackTheKitBag onExit={() => setActiveActivity(null)} />
+  }
+
+  if (activeActivity === 'half-time-check') {
+    return <HalfTimeCheck onExit={() => setActiveActivity(null)} />
+  }
+
+  if (activeActivity === 'meet-the-team') {
+    return <MeetTheTeam onExit={() => setActiveActivity(null)} />
   }
 
   return (
@@ -45,9 +60,9 @@ function App() {
             <p className="section-kicker">Inside this issue</p>
             <h2>Choose your challenge</h2>
           </div>
-          <div className="progress-badge" aria-label="One activity ready">
-            <strong>1</strong>
-            <span>live game</span>
+          <div className="progress-badge" aria-label="Four activities ready">
+            <strong>4</strong>
+            <span>live games</span>
           </div>
         </div>
 
