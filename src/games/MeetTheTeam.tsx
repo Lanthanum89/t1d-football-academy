@@ -21,6 +21,15 @@ const helpers: Helper[] = [
   { id: 'trusted-adult', name: 'Trusted adult', role: 'The team captain you can always tell.' },
 ]
 
+const helperArt: Record<string, string> = {
+  insulin: './mascots/team/insulin.png',
+  glucose: './mascots/team/glucose.png',
+  food: './mascots/team/food.png',
+  movement: './mascots/team/movement.png',
+  devices: './mascots/team/devices.png',
+  'trusted-adult': './mascots/team/trusted-adult.png',
+}
+
 export function MeetTheTeam({ onExit }: MeetTheTeamProps) {
   const [stage, setStage] = useState<Stage>('intro')
   const [collected, setCollected] = useState<string[]>([])
@@ -98,6 +107,7 @@ export function MeetTheTeam({ onExit }: MeetTheTeamProps) {
                       className={`team-helper${isCollected ? ' team-helper--collected' : ''}`}
                       onClick={() => collect(helper.id)}
                     >
+                      <img className="team-helper__art" src={helperArt[helper.id]} alt="" aria-hidden="true" />
                       <strong>{helper.name}</strong>
                       {isCollected ? <span>{helper.role}</span> : <span>Tap to reveal</span>}
                     </button>
