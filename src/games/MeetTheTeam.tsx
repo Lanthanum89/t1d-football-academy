@@ -97,7 +97,7 @@ export function MeetTheTeam({ onExit }: MeetTheTeamProps) {
           {stage === 'collect' && (
             <>
               <h1 id="game-title" ref={stageHeadingRef} tabIndex={-1}>Tap each teammate</h1>
-              <div className="team-grid" aria-label="Collect your team helpers">
+              <div className="team-grid" role="group" aria-label="Collect your team helpers">
                 {helpers.map((helper) => {
                   const isCollected = collected.includes(helper.id)
                   return (

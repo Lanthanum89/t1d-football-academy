@@ -19,7 +19,7 @@ export function HalfTimeCheck({ onExit }: HalfTimeCheckProps) {
 
   useEffect(() => {
     stageHeadingRef.current?.focus()
-  }, [stage])
+  }, [stage, choice])
 
   useEffect(() => () => {
     if ('speechSynthesis' in window) {

@@ -99,7 +99,7 @@ export function PackTheKitBag({ onExit }: PackTheKitBagProps) {
           {stage === 'pack' && (
             <>
               <h1 id="game-title" ref={stageHeadingRef} tabIndex={-1}>What goes in the bag?</h1>
-              <div className="kit-grid" aria-label="Pack items into the kit bag">
+              <div className="kit-grid" role="group" aria-label="Pack items into the kit bag">
                 {kitItems.map((item) => {
                   const isPacked = packed.includes(item.id)
                   return (
