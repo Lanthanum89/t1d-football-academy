@@ -15,7 +15,7 @@ export const activities: Activity[] = [
     strapline: 'Can you pack the right matchday kit?',
     artwork: 'kit-bag',
     colour: 'orange',
-    status: 'planned',
+    status: 'ready',
   },
   {
     id: 'half-time-check',
@@ -23,7 +23,7 @@ export const activities: Activity[] = [
     strapline: 'Pause the match and check in with your team.',
     artwork: 'half-time',
     colour: 'purple',
-    status: 'planned',
+    status: 'ready',
   },
   {
     id: 'meet-the-team',
@@ -31,6 +31,6 @@ export const activities: Activity[] = [
     strapline: 'Collect the helpers on your T1D team.',
     artwork: 'team',
     colour: 'green',
-    status: 'planned',
+    status: 'ready',
   },
 ]

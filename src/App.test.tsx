@@ -15,7 +15,7 @@ describe('T1D Football Academy', () => {
   it('starts the Call the Coach drill and reinforces telling an adult', () => {
     render(<App />)
 
-    fireEvent.click(screen.getByRole('button', { name: /Kick off/i }))
+    fireEvent.click(screen.getAllByRole('button', { name: /Kick off/i })[0])
     fireEvent.click(screen.getByRole('button', { name: /Blow the whistle/i }))
     expect(screen.getByRole('heading', { name: /Who do you tell/i })).toHaveFocus()
     fireEvent.click(screen.getByRole('button', { name: /My grown-up/i }))
@@ -27,13 +27,60 @@ describe('T1D Football Academy', () => {
   it('gently redirects an unsafe choice', () => {
     render(<App />)
 
-    fireEvent.click(screen.getByRole('button', { name: /Kick off/i }))
+    fireEvent.click(screen.getAllByRole('button', { name: /Kick off/i })[0])
     fireEvent.click(screen.getByRole('button', { name: /Blow the whistle/i }))
     fireEvent.click(screen.getByRole('button', { name: /Keep playing/i }))
 
     expect(screen.getByText('Let’s try that again')).toBeInTheDocument()
     expect(screen.getByText(/tell your grown-up first/i)).toBeInTheDocument()
     expect(screen.getByRole('button', { name: /Tell my grown-up/i })).toBeInTheDocument()
+  })
+
+  it('packs the kit bag and flags anything missing', () => {
+    render(<App />)
+
+    fireEvent.click(screen.getAllByRole('button', { name: /Kick off/i })[1])
+    fireEvent.click(screen.getByRole('button', { name: /Open the kit bag/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Glucose meter/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Check the bag/i }))
+
+    expect(screen.getByText('Almost there')).toBeInTheDocument()
+    expect(screen.getByText(/Don't forget:/i)).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: /Back to the bag/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Quick sugar snack/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Insulin kit/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Spare device batteries/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Check the bag/i }))
+
+    expect(screen.getByText('Kit bag ready!')).toBeInTheDocument()
+  })
+
+  it('reinforces pausing for the half-time check', () => {
+    render(<App />)
+
+    fireEvent.click(screen.getAllByRole('button', { name: /Kick off/i })[2])
+    fireEvent.click(screen.getByRole('button', { name: /Blow the whistle/i }))
+    fireEvent.click(screen.getByRole('button', { name: /Keep playing/i }))
+
+    expect(screen.getByText(/Half time is for everyone to pause/i)).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: /Pause and check in/i }))
+    expect(screen.getByRole('heading', { name: 'Great teamwork!' })).toHaveFocus()
+  })
+
+  it('collects every teammate in Meet the Team', () => {
+    render(<App />)
+
+    fireEvent.click(screen.getAllByRole('button', { name: /Kick off/i })[3])
+    fireEvent.click(screen.getByRole('button', { name: /Meet the team/i }))
+
+    for (const name of ['Insulin', 'Glucose device', 'Food', 'Movement', 'Devices', 'Trusted adult']) {
+      fireEvent.click(screen.getByRole('button', { name: `${name} Tap to reveal` }))
+    }
+
+    fireEvent.click(screen.getByRole('button', { name: /Full squad!/i }))
+    expect(screen.getByRole('heading', { name: 'Full squad!' })).toHaveFocus()
   })
 
   it('speaks the visible feedback and cancels speech when leaving', () => {
@@ -55,7 +102,7 @@ describe('T1D Football Academy', () => {
     vi.stubGlobal('SpeechSynthesisUtterance', MockSpeechSynthesisUtterance)
 
     const { unmount } = render(<App />)
-    fireEvent.click(screen.getByRole('button', { name: /Kick off/i }))
+    fireEvent.click(screen.getAllByRole('button', { name: /Kick off/i })[0])
     fireEvent.click(screen.getByRole('button', { name: /Blow the whistle/i }))
     fireEvent.click(screen.getByRole('button', { name: /My grown-up/i }))
     fireEvent.click(screen.getByRole('button', { name: /Hear it/i }))

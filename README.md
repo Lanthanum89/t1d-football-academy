@@ -10,14 +10,14 @@ The academy uses short activities to build confidence around noticing body signa
 - Installable PWA with offline app-shell support
 - Responsive 1990s football-magazine matchday hub
 - Original illustrated player and lion mascot artwork
-- First playable `Call the Coach` challenge with a short, staged interaction
+- Four playable challenges: `Call the Coach`, `Pack the Kit Bag`, `Half-Time Check` and `Meet the Team`
 - Optional spoken instructions through the browser speech API
 - Reduced-motion support and large touch targets
 - Vitest and Testing Library coverage
 - GitHub Actions checks for lint, tests, build and production dependency audit
 - Dependabot configuration
 
-## Planned activities
+## Activities
 
 1. **Call the Coach**: practise telling a trusted adult when something feels different
 2. **Pack the Kit Bag**: learn which familiar T1D items travel with the team
