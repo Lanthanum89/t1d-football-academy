@@ -2,6 +2,15 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import { vi } from 'vitest'
 import App from './App'
 
+// jsdom has no PointerEvent constructor, so RTL's fireEvent.pointer* helpers
+// silently drop clientX/clientY/pointerId. Build the native event by hand and
+// assign the fields our drag handlers read.
+function firePointerEvent(element: Element, type: string, props: Record<string, unknown>) {
+  const event = new Event(type, { bubbles: true, cancelable: true })
+  Object.assign(event, { pointerType: 'touch', button: 0 }, props)
+  fireEvent(element, event)
+}
+
 describe('T1D Football Academy', () => {
   it('shows the four academy activities', () => {
     render(<App />)
@@ -54,6 +63,26 @@ describe('T1D Football Academy', () => {
     fireEvent.click(screen.getByRole('button', { name: /Check the bag/i }))
 
     expect(screen.getByText('Kit bag ready!')).toBeInTheDocument()
+  })
+
+  it('drags a kit item into the bag', () => {
+    render(<App />)
+
+    fireEvent.click(screen.getAllByRole('button', { name: /Kick off/i })[1])
+    fireEvent.click(screen.getByRole('button', { name: /Open the kit bag/i }))
+
+    const item = screen.getByRole('button', { name: /Glucose meter/i })
+    const bagZone = document.querySelector('.kit-bag-zone') as HTMLElement
+    vi.spyOn(bagZone, 'getBoundingClientRect').mockReturnValue({
+      left: 100, right: 300, top: 100, bottom: 200, width: 200, height: 100, x: 100, y: 100, toJSON: () => {},
+    } as DOMRect)
+
+    firePointerEvent(item, 'pointerdown', { pointerId: 1, clientX: 10, clientY: 10 })
+    firePointerEvent(item, 'pointermove', { pointerId: 1, clientX: 150, clientY: 150 })
+    firePointerEvent(item, 'pointerup', { pointerId: 1, clientX: 150, clientY: 150 })
+
+    expect(screen.getByRole('button', { name: /Glucose meter\. Packed\. Tap to remove\./i })).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /^Glucose meter Drag or tap to pack$/i })).not.toBeInTheDocument()
   })
 
   it('reinforces pausing for the half-time check', () => {
